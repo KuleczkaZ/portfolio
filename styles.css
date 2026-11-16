@@ -4,3 +4,8 @@ body {
 * {
     font-family: 'Arial', sans-serif;
 }
+.warning {
+    background-color: #FFF4A3;
+    padding: 4px;
+    border: 1px solid black;
+}
