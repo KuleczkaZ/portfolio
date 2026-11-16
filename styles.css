@@ -9,3 +9,10 @@ body {
     padding: 4px;
     border: 1px solid black;
 }
+.warning * {
+    padding-inline: 12px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
