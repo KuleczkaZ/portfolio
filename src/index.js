@@ -8,7 +8,7 @@ export default {
       }
       if (request.method === "POST") {
         const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-        const { success } = await env.MY_RATE_LIMITER.limit({ key: ip });
+        const { success } = await env.ratelimit.limit({ key: ip });
         if (!success) {
           return new Response("too many submissions", {
             status: 429,
