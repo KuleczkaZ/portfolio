@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html class="no-js">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,9 +10,6 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
         <div class="bar"></div><br><br><br><br>
         <h1>Hello</h1>
         <div class="container">
@@ -25,31 +18,33 @@
                 I like to make stuff on the computer in my free time and i like to talk to my friends.<br>
                 They are very nice<br>
                 I go by KuleczkaZ online<br>
-                <img src="https://avatars.githubusercontent.com/u/357197776?v=4" alt="kuleczkaz" width="200px"><br>
+                <img src="https://avatars.githubusercontent.com/u/357197776?v=4" alt="kuleczkaz" width="200">
             </p>
         </div>
         <div class="warning">
-            <h2>
-                <b>!! WARNING !!</b>
-            </h2>
+            <h2><b>!! WARNING !!</b></h2>
             <p>Content is unfiltered and can contain profanity</p>
-        </div><br>
-        <br><hr><h1>Questions for me</h1>
+        </div>
+        <br><hr>
+        <h1>Questions for me</h1>
         <div class="container">
             <h2>Add Question</h2>
             <form id="form">
                 <input type="text" id="textinput" placeholder="Here" required>
-                <input id="submit" type="submit">Submit</button>
+                <button id="submit" type="submit">Submit</button>
             </form>
         </div><br>
         <div class="container">
             <h2>Questions</h2>
             <table id="table">
-                <tr>
-                    <th>Id</th>
-                    <th>Text</th>
-                    <th>Time</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Text</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
             </table>
         </div>
     </body>

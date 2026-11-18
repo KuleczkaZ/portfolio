@@ -1,4 +1,4 @@
-const tbl = document.getElementById("table");
+const tbl = document.getElementById("tablebody");
 const form = document.getElementById("form");
 const txtin = document.getElementById("textinput");
 const sub = document.getElementById("submit");
