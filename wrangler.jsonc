@@ -12,5 +12,15 @@
       "database_name": "db",
       "database_id": "562c98fe-0287-41dd-b648-476bcd08a269"
     }
+  ],
+  "ratelimits": [
+    {
+      "name": "ratelimit",
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 3,
+        "period": 60
+      }
+    }
   ]
 }
