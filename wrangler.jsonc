@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-17",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "db",
+      "database_id": "562c98fe-0287-41dd-b648-476bcd08a269"
+    }
+  ]
+}
