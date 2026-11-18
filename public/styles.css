@@ -17,7 +17,7 @@ body {
     border: 1px solid black;
     padding: 8px;
 }
-img, tr {
+img, table, th, tr {
     border: 1px solid black;
 }
 hr {

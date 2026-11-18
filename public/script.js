@@ -1,34 +1,40 @@
-const tableBody = document.getElementById("table");
-const addForm = document.getElementById("form");
-const txtin = document.getElementById("txtin");
-
+const tbl = document.getElementById("table");
+const form = document.getElementById("form");
+const txtin = document.getElementById("textinput");
+const sub = document.getElementById("submit");
 function append(row) {
-  const tr = tableBody.insertRow();
-  const idc = tr.insertCell();
-  idc.textContent = row.id;
-  const txcl = tr.insertCell();
-  txcl.textContent = row.text;
-  const tmc = tr.insertCell();
-  tmc.textContent = row.time;
+  const tr = tbl.insertRow();
+  tr.insertCell().textContent = row.id;
+  tr.insertCell().textContent = row.text;
+  tr.insertCell().textContent = row.time;
 }
-async function add() {
-  const response = await fetch("/api/table");
-  const results = await response.json();
+async function adds() {
+  const rp = await fetch("/api/table");
+  const results = await rp.json();
   results.forEach(append);
 }
-addForm.addEventListener("submit", async (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const txtv = txtin.value.trim();
-  if (!txtv) return;
-  const response = await fetch("/api/table", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text: txtv }),
-  });
-  if (response.ok) {
-    const nr = await response.json();
-    append(nr);
-    txtin.value = "";
+  const tv = txtin.value.trim();
+  if (!tv) return;
+  sub.disabled = true;
+  try {
+    const rp = await fetch("/api/table", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: tv }),
+    });
+    if (rp.ok) {
+      const newRow = await rp.json();
+      append(newRow);
+      txtin.value = "";
+    } else if (rp.status === 429) {
+      alert("You are posting too fast. Please wait a minute and try again.");
+    } else if (rp.status === 409) {
+      alert("That exact message was just posted.");
+    }
+  } finally {
+    sub.disabled = false;
   }
 });
-add();
+adds();

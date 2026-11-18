@@ -8,21 +8,24 @@ export default {
       }
       if (request.method === "POST") {
         const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-        const { success } = await env.ratelimit.limit({ key: ip });
+        const { success } = await env.MY_RATE_LIMITER.limit({ key: ip });
         if (!success) {
-          return new Response("rate limit hit! try again later", {
+          return new Response("too many submissions", {
             status: 429,
           });
         }
         const body = await request.json();
-        if (body.website) {
-          return new Response("you've been rate limited! sorry!", { status: 400 });
-        }
         const cleanText = String(body.text || "").trim();
         if (!cleanText || cleanText.length > 200) {
-          return new Response("question must be 1-200 characters", {
+          return new Response("you've been rate limited!", {
             status: 400,
           });
+        }
+        const lastRow = await env.DB.prepare(
+          'SELECT text FROM "table" ORDER BY id DESC LIMIT 1'
+        ).first();
+        if (lastRow && lastRow.text === cleanText) {
+          return new Response("duplicate message cannot send", { status: 409 });
         }
         const unixTime = Math.floor(Date.now() / 1000);
         const newRow = await env.DB.prepare(
