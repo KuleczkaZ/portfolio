@@ -33,3 +33,25 @@ hr {
     top: 0;
     left: 0;
 }
+#table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+#table th:nth-child(1) {
+  width: 60px;
+}
+#table th:nth-child(2) {
+  width: auto;
+}
+#table th:nth-child(3) {
+  width: 120px;
+}
+#table td {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+tr>th{
+    background-color: black;
+    color: white;
+}
