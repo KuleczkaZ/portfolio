@@ -13,12 +13,14 @@ body {
     padding-inline: 12px;
 }
 .container {
-    max-width: 800px;
     border: 1px solid black;
     padding: 8px;
 }
 img, table, th, tr {
     border: 1px solid black;
+}
+table {
+    width: 100%;
 }
 hr {
     border: 1px solid gray;
