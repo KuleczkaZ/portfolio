@@ -40,14 +40,12 @@ hr {
 }
 #table th:nth-child(1) {
   width: 60px;
-  background-color: #CFCFCF;
 }
 #table th:nth-child(2) {
   width: auto;
 }
 #table th:nth-child(3) {
   width: 120px;
-  background-color: #CFCFCF;
 }
 #table td {
   word-wrap: break-word;
@@ -61,4 +59,10 @@ hr {
 tr>th{
     background-color: black;
     color: white;
+}
+tr>th:nth-child(1) {
+  background-color: #CFCFCF;
+}
+tr>th:nth-child(3) {
+  background-color: #CFCFCF;
 }
