@@ -40,16 +40,23 @@ hr {
 }
 #table th:nth-child(1) {
   width: 60px;
+  background-color: #CFCFCF;
 }
 #table th:nth-child(2) {
   width: auto;
 }
 #table th:nth-child(3) {
   width: 120px;
+  background-color: #CFCFCF;
 }
 #table td {
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+#table tbody td {
+  height: 150px;
+  vertical-align: top;
+  padding: 10px;
 }
 tr>th{
     background-color: black;
