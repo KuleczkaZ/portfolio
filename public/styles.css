@@ -21,10 +21,13 @@ img, tr {
     border: 1px solid black;
 }
 hr {
-    border: 4px solid gray;
+    border: 1px solid gray;
 }
 .bar {
     background-color: gray;
-    padding-bottom: 12px;
-    margin-bottom: 6px;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
