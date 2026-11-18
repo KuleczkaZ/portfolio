@@ -60,9 +60,9 @@ tr>th{
     background-color: black;
     color: white;
 }
-tr>th:nth-child(1) {
+#table tbody:nth-child(1) {
   background-color: #CFCFCF;
 }
-tr>th:nth-child(3) {
+#table tbody:nth-child(3) {
   background-color: #CFCFCF;
 }
